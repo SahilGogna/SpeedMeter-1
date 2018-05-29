@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		244C26A3700E30E0C3153AD8 /* Pods_SpeedMeter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDA8FAE130078CF3859C334F /* Pods_SpeedMeter.framework */; };
 		D98EFC5E20BDD7A200E35161 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98EFC5D20BDD7A200E35161 /* AppDelegate.swift */; };
 		D98EFC6020BDD7A200E35161 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98EFC5F20BDD7A200E35161 /* ViewController.swift */; };
 		D98EFC6320BDD7A200E35161 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D98EFC6120BDD7A200E35161 /* Main.storyboard */; };
@@ -15,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		29F04C6C41EB4C1812321F07 /* Pods-SpeedMeter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpeedMeter.release.xcconfig"; path = "Pods/Target Support Files/Pods-SpeedMeter/Pods-SpeedMeter.release.xcconfig"; sourceTree = "<group>"; };
+		BDA8FAE130078CF3859C334F /* Pods_SpeedMeter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpeedMeter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D98EFC5A20BDD7A200E35161 /* SpeedMeter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeedMeter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D98EFC5D20BDD7A200E35161 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D98EFC5F20BDD7A200E35161 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		D98EFC6420BDD7A200E35161 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D98EFC6720BDD7A200E35161 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D98EFC6920BDD7A200E35161 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DBE8EC9BB80403FAC2CA4ECC /* Pods-SpeedMeter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpeedMeter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SpeedMeter/Pods-SpeedMeter.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				244C26A3700E30E0C3153AD8 /* Pods_SpeedMeter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C8997F3F17BEEA26D12E972F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DBE8EC9BB80403FAC2CA4ECC /* Pods-SpeedMeter.debug.xcconfig */,
+				29F04C6C41EB4C1812321F07 /* Pods-SpeedMeter.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D98EFC5120BDD7A200E35161 = {
 			isa = PBXGroup;
 			children = (
 				D98EFC5C20BDD7A200E35161 /* SpeedMeter */,
 				D98EFC5B20BDD7A200E35161 /* Products */,
+				C8997F3F17BEEA26D12E972F /* Pods */,
+				F8FA1708D982D7FB649E3349 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +70,38 @@
 		D98EFC5C20BDD7A200E35161 /* SpeedMeter */ = {
 			isa = PBXGroup;
 			children = (
+				D98EFC6F20BDD90400E35161 /* View */,
+				D98EFC7020BDD91A00E35161 /* UI */,
 				D98EFC5D20BDD7A200E35161 /* AppDelegate.swift */,
-				D98EFC5F20BDD7A200E35161 /* ViewController.swift */,
-				D98EFC6120BDD7A200E35161 /* Main.storyboard */,
-				D98EFC6420BDD7A200E35161 /* Assets.xcassets */,
-				D98EFC6620BDD7A200E35161 /* LaunchScreen.storyboard */,
 				D98EFC6920BDD7A200E35161 /* Info.plist */,
 			);
 			path = SpeedMeter;
+			sourceTree = "<group>";
+		};
+		D98EFC6F20BDD90400E35161 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D98EFC5F20BDD7A200E35161 /* ViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D98EFC7020BDD91A00E35161 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				D98EFC6120BDD7A200E35161 /* Main.storyboard */,
+				D98EFC6420BDD7A200E35161 /* Assets.xcassets */,
+				D98EFC6620BDD7A200E35161 /* LaunchScreen.storyboard */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		F8FA1708D982D7FB649E3349 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BDA8FAE130078CF3859C334F /* Pods_SpeedMeter.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +111,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D98EFC6C20BDD7A200E35161 /* Build configuration list for PBXNativeTarget "SpeedMeter" */;
 			buildPhases = (
+				81323638412D67B3880C9034 /* [CP] Check Pods Manifest.lock */,
 				D98EFC5620BDD7A200E35161 /* Sources */,
 				D98EFC5720BDD7A200E35161 /* Frameworks */,
 				D98EFC5820BDD7A200E35161 /* Resources */,
+				02B20C34DE1515D24F75E62B /* [CP] Embed Pods Frameworks */,
+				7E2D364AA765D83BC9F05086 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,6 +173,62 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		02B20C34DE1515D24F75E62B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SpeedMeter/Pods-SpeedMeter-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/LTMorphingLabel/LTMorphingLabel.framework",
+				"${BUILT_PRODUCTS_DIR}/RevealingSplashView/RevealingSplashView.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LTMorphingLabel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealingSplashView.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SpeedMeter/Pods-SpeedMeter-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7E2D364AA765D83BC9F05086 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SpeedMeter/Pods-SpeedMeter-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		81323638412D67B3880C9034 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SpeedMeter-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D98EFC5620BDD7A200E35161 /* Sources */ = {
@@ -272,6 +371,7 @@
 		};
 		D98EFC6D20BDD7A200E35161 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DBE8EC9BB80403FAC2CA4ECC /* Pods-SpeedMeter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +387,7 @@
 		};
 		D98EFC6E20BDD7A200E35161 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29F04C6C41EB4C1812321F07 /* Pods-SpeedMeter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

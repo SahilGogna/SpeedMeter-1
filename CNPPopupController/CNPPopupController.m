@@ -349,7 +349,9 @@ CGFloat CNP_UIInterfaceOrientationAngleOfOrientation(UIInterfaceOrientation orie
 - (CGPoint)endingPoint {
     CGPoint center;
     if (self.theme.popupStyle == CNPPopupStyleActionSheet) {
-        center = CGPointMake(self.maskView.center.x, self.maskView.bounds.size.height-(self.popupView.bounds.size.height * 0.5));
+        
+        // Modifiye ==>>> Popup'un ekranın altına uzaklığı
+        center = CGPointMake(self.maskView.center.x, self.maskView.bounds.size.height-(self.popupView.bounds.size.height * 0.515));
     }
     else {
         center = self.maskView.center;

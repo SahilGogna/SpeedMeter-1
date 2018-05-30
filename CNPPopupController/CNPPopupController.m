@@ -425,6 +425,28 @@ CGFloat CNP_UIInterfaceOrientationAngleOfOrientation(UIInterfaceOrientation orie
 }
 
 - (void)buttonTouched {
+    
+    // Modifiye  ==>>> Eğer konum kapalıysa buttona basıldığında ayarlara git
+    
+    if (![CLLocationManager locationServicesEnabled]) {
+        NSURL*locationSettingUrl = [NSURL URLWithString:@"App-Prefs:root=Privacy&path=LOCATION_SERVICES"];
+        if ([[UIApplication sharedApplication] canOpenURL:locationSettingUrl]) {
+            NSMutableDictionary *params = [NSMutableDictionary dictionary];
+            if (@available(iOS 10.0, *)) {
+                [[UIApplication sharedApplication] openURL:locationSettingUrl options:params completionHandler:^(BOOL success) {
+                    if (!success) {
+                        NSLog(@"ios10[++],açma başarısız !");
+                    }else{
+                        NSLog(@"Başarılı !");
+                    }
+                }];
+            }
+        }
+    }
+    else {
+        NSLog(@"Hata!!!");
+    }
+    
     if (self.selectionHandler) {
         self.selectionHandler(self);
     }

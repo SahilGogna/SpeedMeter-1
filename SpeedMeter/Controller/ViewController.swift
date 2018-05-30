@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     let splashView = RevealingSplashView(iconImage: UIImage (named: "Icon-3x")!, iconInitialSize: CGSize (width: 70, height: 70), backgroundColor: UIColor.white)
 
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
         self.view.addSubview(splashView)

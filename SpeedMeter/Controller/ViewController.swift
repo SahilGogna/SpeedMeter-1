@@ -21,12 +21,23 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         self.view.addSubview(splashView)
+        //splashView.duration = 0.9
         splashView.animationType = .heartBeat
         splashView.startAnimation()
         
         Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { (timer) in
             self.splashView.finishHeartBeatAnimation()
         }
+        
+        // Arkaplanda 2 saniye beklettikten sonra kodu çalıştırıyor. Ve diğer uyg. çakışmıyor !!
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
+            if CLLocationManager.locationServicesEnabled() {
+                print("Konum Açık !")
+            }
+            else {
+                self.showPopupWithStyle(CNPPopupStyle.actionSheet)
+            }
+        })
     }
     
     func showPopupWithStyle(_ popupStyle: CNPPopupStyle) {
@@ -35,14 +46,14 @@ class ViewController: UIViewController {
         paragraphStyle.lineBreakMode = NSLineBreakMode.byWordWrapping
         paragraphStyle.alignment = NSTextAlignment.center
         
-        let title = NSAttributedString(string: "It's A Popup!", attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 24), NSParagraphStyleAttributeName: paragraphStyle])
+        let title = NSAttributedString(string: "Konuma ihtiyacım var 🙏", attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 24), NSParagraphStyleAttributeName: paragraphStyle])
         let lineOne = NSAttributedString(string: "You can add text and images", attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 18), NSParagraphStyleAttributeName: paragraphStyle])
         let lineTwo = NSAttributedString(string: "With style, using NSAttributedString", attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 18), NSForegroundColorAttributeName: UIColor.init(colorLiteralRed: 0.46, green: 0.8, blue: 1.0, alpha: 1.0), NSParagraphStyleAttributeName: paragraphStyle])
         
         let button = CNPPopupButton.init(frame: CGRect(x: 0, y: 0, width: 200, height: 60))
         button.setTitleColor(UIColor.white, for: UIControlState())
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
-        button.setTitle("Close Me", for: UIControlState())
+        button.setTitle("Konumu AÇ", for: UIControlState())
         
         button.backgroundColor = UIColor.init(colorLiteralRed: 0.46, green: 0.8, blue: 1.0, alpha: 1.0)
         
@@ -79,7 +90,7 @@ class ViewController: UIViewController {
         popupController.theme.popupStyle = popupStyle
         // LFL added settings for custom color and blur
         popupController.theme.maskType = CNPPopupMaskType.custom
-        popupController.theme.customMaskColor = UIColor.red
+        popupController.theme.customMaskColor = UIColor.white
         popupController.theme.blurEffectAlpha = 1.0
         popupController.delegate = self
         self.popupController = popupController

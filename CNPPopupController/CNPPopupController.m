@@ -147,9 +147,13 @@ CGFloat CNP_UIInterfaceOrientationAngleOfOrientation(UIInterfaceOrientation orie
     }
     if (self.theme.popupStyle == CNPPopupStyleActionSheet) {
         self.theme.presentationStyle = CNPPopupPresentationStyleSlideInFromBottom;
+        
+        // Moodifiye ==>>> Popup kenarları yuvarlama
+        self.popupView.layer.cornerRadius = 5;
     }
     self.blurEffectView.alpha = self.theme.blurEffectAlpha;
-    self.popupView.layer.cornerRadius = self.theme.popupStyle == CNPPopupStyleCentered?self.theme.cornerRadius:0;
+    // Modifiye ==>>> Düzenleme (Gitten detaylara bakarsın)
+    self.popupView.layer.cornerRadius = 5;
     self.popupView.backgroundColor = self.theme.backgroundColor;
     UIColor *maskBackgroundColor;
     if (self.theme.popupStyle == CNPPopupStyleFullscreen) {

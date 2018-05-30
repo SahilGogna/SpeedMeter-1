@@ -1,18 +1,15 @@
 PODS:
-  - CNPPopupController (0.3.3)
   - LTMorphingLabel (0.5.5)
   - RevealingSplashView (0.4.0)
 
 DEPENDENCIES:
-  - CNPPopupController
   - LTMorphingLabel
   - RevealingSplashView
 
 SPEC CHECKSUMS:
-  CNPPopupController: 59b06290762f68beab5fb0bbfa87eb4dcbefb7de
   LTMorphingLabel: 86464e41c3394dbf1ad098442ed4dcf8891ba975
   RevealingSplashView: 72be158ad5e1bc72713e8f78383dc3e1803ce4d1
 
-PODFILE CHECKSUM: e6927aa486c4a780ffd86e2c034af8cad9f6eeca
+PODFILE CHECKSUM: 5b08a386080514000ec9525e970098fbc1719c19
 
 COCOAPODS: 1.3.1

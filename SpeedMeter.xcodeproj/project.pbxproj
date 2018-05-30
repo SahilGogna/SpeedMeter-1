@@ -49,6 +49,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		D94084CF20BF049A00497DDE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D98EFC5F20BDD7A200E35161 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		D98EFC5120BDD7A200E35161 = {
 			isa = PBXGroup;
 			children = (
@@ -70,6 +78,7 @@
 		D98EFC5C20BDD7A200E35161 /* SpeedMeter */ = {
 			isa = PBXGroup;
 			children = (
+				D94084CF20BF049A00497DDE /* Controller */,
 				D98EFC6F20BDD90400E35161 /* View */,
 				D98EFC7020BDD91A00E35161 /* UI */,
 				D98EFC5D20BDD7A200E35161 /* AppDelegate.swift */,
@@ -81,7 +90,6 @@
 		D98EFC6F20BDD90400E35161 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D98EFC5F20BDD7A200E35161 /* ViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -182,13 +190,11 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SpeedMeter/Pods-SpeedMeter-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/CNPPopupController/CNPPopupController.framework",
 				"${BUILT_PRODUCTS_DIR}/LTMorphingLabel/LTMorphingLabel.framework",
 				"${BUILT_PRODUCTS_DIR}/RevealingSplashView/RevealingSplashView.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CNPPopupController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LTMorphingLabel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealingSplashView.framework",
 			);

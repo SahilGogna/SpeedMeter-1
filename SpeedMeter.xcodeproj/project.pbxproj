@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		244C26A3700E30E0C3153AD8 /* Pods_SpeedMeter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDA8FAE130078CF3859C334F /* Pods_SpeedMeter.framework */; };
+		D94084D720BF06BC00497DDE /* CNPPopupController.m in Sources */ = {isa = PBXBuildFile; fileRef = D94084D520BF06BC00497DDE /* CNPPopupController.m */; };
 		D98EFC5E20BDD7A200E35161 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98EFC5D20BDD7A200E35161 /* AppDelegate.swift */; };
 		D98EFC6020BDD7A200E35161 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98EFC5F20BDD7A200E35161 /* ViewController.swift */; };
 		D98EFC6320BDD7A200E35161 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D98EFC6120BDD7A200E35161 /* Main.storyboard */; };
@@ -18,6 +19,9 @@
 /* Begin PBXFileReference section */
 		29F04C6C41EB4C1812321F07 /* Pods-SpeedMeter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpeedMeter.release.xcconfig"; path = "Pods/Target Support Files/Pods-SpeedMeter/Pods-SpeedMeter.release.xcconfig"; sourceTree = "<group>"; };
 		BDA8FAE130078CF3859C334F /* Pods_SpeedMeter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpeedMeter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D94084D420BF06BB00497DDE /* SpeedMeter-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SpeedMeter-Bridging-Header.h"; sourceTree = "<group>"; };
+		D94084D520BF06BC00497DDE /* CNPPopupController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNPPopupController.m; sourceTree = "<group>"; };
+		D94084D620BF06BC00497DDE /* CNPPopupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNPPopupController.h; sourceTree = "<group>"; };
 		D98EFC5A20BDD7A200E35161 /* SpeedMeter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeedMeter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D98EFC5D20BDD7A200E35161 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D98EFC5F20BDD7A200E35161 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,9 +61,20 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		D94084D320BF066300497DDE /* CNPPopupController */ = {
+			isa = PBXGroup;
+			children = (
+				D94084D620BF06BC00497DDE /* CNPPopupController.h */,
+				D94084D520BF06BC00497DDE /* CNPPopupController.m */,
+				D94084D420BF06BB00497DDE /* SpeedMeter-Bridging-Header.h */,
+			);
+			path = CNPPopupController;
+			sourceTree = "<group>";
+		};
 		D98EFC5120BDD7A200E35161 = {
 			isa = PBXGroup;
 			children = (
+				D94084D320BF066300497DDE /* CNPPopupController */,
 				D98EFC5C20BDD7A200E35161 /* SpeedMeter */,
 				D98EFC5B20BDD7A200E35161 /* Products */,
 				C8997F3F17BEEA26D12E972F /* Pods */,
@@ -147,6 +162,7 @@
 				TargetAttributes = {
 					D98EFC5920BDD7A200E35161 = {
 						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -190,11 +206,13 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SpeedMeter/Pods-SpeedMeter-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CNPPopupController/CNPPopupController.framework",
 				"${BUILT_PRODUCTS_DIR}/LTMorphingLabel/LTMorphingLabel.framework",
 				"${BUILT_PRODUCTS_DIR}/RevealingSplashView/RevealingSplashView.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CNPPopupController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LTMorphingLabel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealingSplashView.framework",
 			);
@@ -245,6 +263,7 @@
 			files = (
 				D98EFC6020BDD7A200E35161 /* ViewController.swift in Sources */,
 				D98EFC5E20BDD7A200E35161 /* AppDelegate.swift in Sources */,
+				D94084D720BF06BC00497DDE /* CNPPopupController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,6 +401,7 @@
 			baseConfigurationReference = DBE8EC9BB80403FAC2CA4ECC /* Pods-SpeedMeter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8DVHX5WRRH;
 				INFOPLIST_FILE = SpeedMeter/Info.plist;
@@ -389,7 +409,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mustafagunes.SpeedMeter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_OBJC_BRIDGING_HEADER = "CNPPopupController/SpeedMeter-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -399,6 +421,7 @@
 			baseConfigurationReference = 29F04C6C41EB4C1812321F07 /* Pods-SpeedMeter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8DVHX5WRRH;
 				INFOPLIST_FILE = SpeedMeter/Info.plist;
@@ -406,7 +429,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mustafagunes.SpeedMeter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_OBJC_BRIDGING_HEADER = "CNPPopupController/SpeedMeter-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

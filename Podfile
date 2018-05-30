@@ -9,5 +9,6 @@ target 'SpeedMeter' do
 
     pod 'LTMorphingLabel'
     pod 'RevealingSplashView'
+    pod 'CNPPopupController'
 
 end

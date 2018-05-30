@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '8A60257CA97F233D779E7B6D86E4C9D3'
-               BlueprintName = 'RevealingSplashView'
+               BlueprintIdentifier = '056B4ACA8C80850FFC348D7A9481D092'
+               BlueprintName = 'CNPPopupController'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'RevealingSplashView.framework'>
+               BuildableName = 'CNPPopupController.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

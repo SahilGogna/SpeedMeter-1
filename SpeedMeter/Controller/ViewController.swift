@@ -40,6 +40,14 @@ class ViewController: UIViewController {
         })
     }
     
+    override var prefersStatusBarHidden: Bool {
+        return !UIApplication.shared.isStatusBarHidden
+    }
+    
+    override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
+        return UIStatusBarAnimation.fade
+    }
+    
     func showPopupWithStyle(_ popupStyle: CNPPopupStyle) {
         
         let paragraphStyle = NSMutableParagraphStyle()

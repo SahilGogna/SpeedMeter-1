@@ -10,5 +10,6 @@ target 'SpeedMeter' do
     pod 'LTMorphingLabel'
     pod 'RevealingSplashView'
     pod 'CNPPopupController'
+    pod 'lottie-ios'
 
 end

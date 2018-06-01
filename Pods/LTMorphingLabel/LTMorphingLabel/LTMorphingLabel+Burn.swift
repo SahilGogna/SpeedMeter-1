@@ -50,8 +50,8 @@ extension LTMorphingLabel {
                 height: maskedHeight
             )
             String(charLimbo.char).draw(in: rect, withAttributes: [
-                .font: self.font,
-                .foregroundColor: self.textColor
+                NSFontAttributeName: self.font,
+                NSForegroundColorAttributeName: self.textColor
                 ])
             let newImage = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
@@ -63,8 +63,7 @@ extension LTMorphingLabel {
             )
         return (newImage!, newRect)
     }
-
-    @objc
+    
     func BurnLoad() {
         
         startClosures["Burn\(LTMorphingPhases.start)"] = {

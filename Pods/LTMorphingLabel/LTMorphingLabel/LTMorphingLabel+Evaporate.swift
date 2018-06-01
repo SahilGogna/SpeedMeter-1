@@ -28,8 +28,7 @@
 import UIKit
 
 extension LTMorphingLabel {
-
-    @objc
+    
     func EvaporateLoad() {
         
         progressClosures["Evaporate\(LTMorphingPhases.progress)"] = {

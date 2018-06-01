@@ -94,8 +94,8 @@ class ViewController: UIViewController {
         popupController.theme.popupStyle = popupStyle
         // LFL added settings for custom color and blur
         popupController.theme.maskType = CNPPopupMaskType.custom
-        popupController.theme.customMaskColor = UIColor.white
-        popupController.theme.blurEffectAlpha = 1.0
+        popupController.theme.customMaskColor = UIColor(white: 1, alpha: 0.0)
+        popupController.theme.blurEffectAlpha = 0.0
         popupController.delegate = self
         self.popupController = popupController
         popupController.present(animated: true)

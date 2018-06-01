@@ -15,6 +15,8 @@ import RevealingSplashView
 class ViewController: UIViewController, SpeedNotifierDelegate, SpeedManagerDelegate {
     
     @IBOutlet weak var speedLabel: LTMorphingLabel!
+    @IBOutlet weak var kmHLabel: UILabel!
+    @IBOutlet weak var notificationInfoLabel: UILabel!
     @IBOutlet weak var notificationSwitch: UISwitch!
     
     var popupController:CNPPopupController?
@@ -46,6 +48,14 @@ class ViewController: UIViewController, SpeedNotifierDelegate, SpeedManagerDeleg
                 print("Konum Açık !")
             }
             else {
+                
+                self.kmHLabel.isHidden = true
+                self.speedLabel.isHidden = true
+                self.notificationSwitch.isHidden = true
+                self.notificationInfoLabel.isHidden = true
+                
+                //exit(0)
+                
                 self.lottieAnimation()
             }
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
@@ -80,6 +90,10 @@ class ViewController: UIViewController, SpeedNotifierDelegate, SpeedManagerDeleg
         return UIStatusBarAnimation.fade
     }
     
+    func pressed(){
+        print("basıldı")
+    }
+    
     func showPopupWithStyle(_ popupStyle: CNPPopupStyle) {
         
         let paragraphStyle = NSMutableParagraphStyle()
@@ -92,7 +106,12 @@ class ViewController: UIViewController, SpeedNotifierDelegate, SpeedManagerDeleg
         let button = CNPPopupButton.init(frame: CGRect(x: 0, y: 0, width: 200, height: 60))
         button.setTitleColor(UIColor.white, for: UIControlState())
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+        button.addTarget(self, action: #selector(ViewController.pressed), for: .touchUpInside)
         button.setTitle("Konumu AÇ", for: UIControlState())
+        
+//        if button.isTracking {
+//            print("button basıldı !!!")
+//        }
         
         button.backgroundColor = UIColor.init(colorLiteralRed: 0.46, green: 0.8, blue: 1.0, alpha: 1.0)
         
@@ -148,6 +167,11 @@ class ViewController: UIViewController, SpeedNotifierDelegate, SpeedManagerDeleg
                 print("Animasyon kontrol başarılı !")
                 animationView.stop()
                 animationView.isHidden = true
+                
+                self.kmHLabel.isHidden = false
+                self.speedLabel.isHidden = false
+                self.notificationSwitch.isHidden = false
+                self.notificationInfoLabel.isHidden = false
             }
         }
     }

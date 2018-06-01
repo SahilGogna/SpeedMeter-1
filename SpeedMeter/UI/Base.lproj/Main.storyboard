@@ -78,13 +78,15 @@
                     </view>
                     <navigationItem key="navigationItem" id="lB3-xg-Idd"/>
                     <connections>
+                        <outlet property="kmHLabel" destination="Dum-Hy-LqZ" id="wvm-Z0-WW2"/>
+                        <outlet property="notificationInfoLabel" destination="htF-By-dgs" id="Ugj-0U-c2p"/>
                         <outlet property="notificationSwitch" destination="Q0L-xy-ARz" id="Kla-4H-Mej"/>
                         <outlet property="speedLabel" destination="X5J-A0-R1S" id="ugR-Qm-j3F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-682.39999999999998" y="190.25487256371815"/>
+            <point key="canvasLocation" x="-688" y="181"/>
         </scene>
     </scenes>
 </document>

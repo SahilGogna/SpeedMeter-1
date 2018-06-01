@@ -7,14 +7,17 @@
 //
 
 import UIKit
-import RevealingSplashView
-import CNPPopupController
 import Lottie
+import LTMorphingLabel
+import CNPPopupController
+import RevealingSplashView
 
 class ViewController: UIViewController {
     
-    var popupController:CNPPopupController?
+    @IBOutlet weak var speedLabel: LTMorphingLabel!
+    @IBOutlet weak var notificationSwitch: UISwitch!
     
+    var popupController:CNPPopupController?
     let splashView = RevealingSplashView(iconImage: UIImage (named: "Icon-3x")!, iconInitialSize: CGSize (width: 70, height: 70), backgroundColor: UIColor.white)
 
     override func viewDidLoad() {

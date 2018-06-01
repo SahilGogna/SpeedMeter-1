@@ -74,6 +74,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="lB3-xg-Idd"/>
+                    <connections>
+                        <outlet property="notificationSwitch" destination="Q0L-xy-ARz" id="Kla-4H-Mej"/>
+                        <outlet property="speedLabel" destination="X5J-A0-R1S" id="ugR-Qm-j3F"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

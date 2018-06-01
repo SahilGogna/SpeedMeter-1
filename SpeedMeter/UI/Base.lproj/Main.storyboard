@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -25,11 +25,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SpeedMeter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- - -" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X5J-A0-R1S">
-                                <rect key="frame" x="62" y="258" width="250" height="150"/>
+                                <rect key="frame" x="82" y="293" width="250" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="7NW-Bn-Jsc"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="lx0-gs-FtV"/>
@@ -39,7 +39,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="km/h" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dum-Hy-LqZ">
-                                <rect key="frame" x="162.5" y="432" width="50" height="25"/>
+                                <rect key="frame" x="182" y="467" width="50" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="HKI-QY-sln"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="M6h-l8-iMC"/>
@@ -49,13 +49,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bildirimleri etkinleştir" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="htF-By-dgs">
-                                <rect key="frame" x="16" y="616.5" width="286" height="30.5"/>
+                                <rect key="frame" x="20" y="685.66666666666663" width="317" height="30.333333333333371"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBoldItalic" family="Avenir Next" pointSize="17"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Q0L-xy-ARz">
-                                <rect key="frame" x="310" y="616" width="51" height="31"/>
+                                <rect key="frame" x="345" y="685" width="51" height="31"/>
                             </switch>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -65,7 +65,6 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="htF-By-dgs" secondAttribute="bottom" constant="20" id="Cbf-Vy-8yO"/>
                             <constraint firstItem="Dum-Hy-LqZ" firstAttribute="top" secondItem="X5J-A0-R1S" secondAttribute="bottom" constant="24" id="GiF-xj-KWv"/>
                             <constraint firstItem="Q0L-xy-ARz" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="TnS-M7-Bmz"/>
-                            <constraint firstItem="htF-By-dgs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="WKi-aT-ZuF"/>
                             <constraint firstItem="htF-By-dgs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="g9S-Kg-QWz"/>
                             <constraint firstItem="X5J-A0-R1S" firstAttribute="centerX" secondItem="Dum-Hy-LqZ" secondAttribute="centerX" id="jwJ-ow-LKQ"/>
                             <constraint firstItem="X5J-A0-R1S" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="t1U-5C-99I"/>

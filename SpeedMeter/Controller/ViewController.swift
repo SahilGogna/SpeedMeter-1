@@ -29,6 +29,8 @@ class ViewController: UIViewController, SpeedNotifierDelegate, SpeedManagerDeleg
         speedManager.delegate = self
         SpeedNotifier.sharedNotifier().delegate = self
         
+        speedLabel.morphingEffect = .evaporate
+        
         self.view.addSubview(splashView)
         //splashView.duration = 0.9
         splashView.animationType = .heartBeat
@@ -46,7 +48,7 @@ class ViewController: UIViewController, SpeedNotifierDelegate, SpeedManagerDeleg
             else {
                 self.lottieAnimation()
             }
-            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3), execute: {
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
                 if CLLocationManager.locationServicesEnabled() {
                     print("Konum Açık PinJump!")
                 }
@@ -140,6 +142,14 @@ class ViewController: UIViewController, SpeedNotifierDelegate, SpeedManagerDeleg
         
         view.addSubview(animationView)
         animationView.play()
+        
+        Timer.scheduledTimer(withTimeInterval: 4, repeats: true) { (pinJump) in
+            if CLLocationManager.locationServicesEnabled() {
+                print("Animasyon kontrol başarılı !")
+                animationView.stop()
+                animationView.isHidden = true
+            }
+        }
     }
 }
 

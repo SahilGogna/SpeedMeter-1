@@ -12,17 +12,22 @@ import LTMorphingLabel
 import CNPPopupController
 import RevealingSplashView
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, SpeedNotifierDelegate, SpeedManagerDelegate {
     
     @IBOutlet weak var speedLabel: LTMorphingLabel!
     @IBOutlet weak var notificationSwitch: UISwitch!
     
     var popupController:CNPPopupController?
     let splashView = RevealingSplashView(iconImage: UIImage (named: "Icon-3x")!, iconInitialSize: CGSize (width: 70, height: 70), backgroundColor: UIColor.white)
+    
+    let speedManager = SpeedManager()
 
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        speedManager.delegate = self
+        SpeedNotifier.sharedNotifier().delegate = self
         
         self.view.addSubview(splashView)
         //splashView.duration = 0.9
@@ -50,6 +55,19 @@ class ViewController: UIViewController {
                 }
             })
         })
+    }
+    
+    
+    @IBAction func toggleNotificationsSwitch(_ sender: UISwitch) {
+        SpeedNotifier.sharedNotifier().shouldNotify = sender.isOn
+    }
+    
+    func speedDidChange(_ speed: Speed) {
+        speedLabel.text = String(Int(speed))
+    }
+    
+    func notificationsStatusDidChange(_ shouldNotify: Bool) {
+        notificationSwitch?.isOn = shouldNotify
     }
     
     override var prefersStatusBarHidden: Bool {

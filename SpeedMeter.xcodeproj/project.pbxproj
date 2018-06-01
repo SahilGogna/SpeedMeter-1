@@ -97,7 +97,7 @@
 			children = (
 				D9F94CBD20C1338200EC3EDC /* Resources */,
 				D94084CF20BF049A00497DDE /* Controller */,
-				D98EFC6F20BDD90400E35161 /* View */,
+				D98EFC6F20BDD90400E35161 /* Model */,
 				D98EFC7020BDD91A00E35161 /* UI */,
 				D98EFC5D20BDD7A200E35161 /* AppDelegate.swift */,
 				D98EFC6920BDD7A200E35161 /* Info.plist */,
@@ -105,11 +105,11 @@
 			path = SpeedMeter;
 			sourceTree = "<group>";
 		};
-		D98EFC6F20BDD90400E35161 /* View */ = {
+		D98EFC6F20BDD90400E35161 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = View;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		D98EFC7020BDD91A00E35161 /* UI */ = {

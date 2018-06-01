@@ -10,6 +10,7 @@
 		244C26A3700E30E0C3153AD8 /* Pods_SpeedMeter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDA8FAE130078CF3859C334F /* Pods_SpeedMeter.framework */; };
 		D94084D720BF06BC00497DDE /* CNPPopupController.m in Sources */ = {isa = PBXBuildFile; fileRef = D94084D520BF06BC00497DDE /* CNPPopupController.m */; };
 		D949BAC320C18A6900DA0CC9 /* SpeedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D949BAC220C18A6900DA0CC9 /* SpeedManager.swift */; };
+		D949BAC520C18DF900DA0CC9 /* SpeedNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D949BAC420C18DF900DA0CC9 /* SpeedNotifier.swift */; };
 		D98EFC5E20BDD7A200E35161 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98EFC5D20BDD7A200E35161 /* AppDelegate.swift */; };
 		D98EFC6020BDD7A200E35161 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98EFC5F20BDD7A200E35161 /* ViewController.swift */; };
 		D98EFC6320BDD7A200E35161 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D98EFC6120BDD7A200E35161 /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 		D94084D520BF06BC00497DDE /* CNPPopupController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNPPopupController.m; sourceTree = "<group>"; };
 		D94084D620BF06BC00497DDE /* CNPPopupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNPPopupController.h; sourceTree = "<group>"; };
 		D949BAC220C18A6900DA0CC9 /* SpeedManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedManager.swift; sourceTree = "<group>"; };
+		D949BAC420C18DF900DA0CC9 /* SpeedNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedNotifier.swift; sourceTree = "<group>"; };
 		D98EFC5A20BDD7A200E35161 /* SpeedMeter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeedMeter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D98EFC5D20BDD7A200E35161 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D98EFC5F20BDD7A200E35161 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				D949BAC220C18A6900DA0CC9 /* SpeedManager.swift */,
+				D949BAC420C18DF900DA0CC9 /* SpeedNotifier.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D98EFC6020BDD7A200E35161 /* ViewController.swift in Sources */,
+				D949BAC520C18DF900DA0CC9 /* SpeedNotifier.swift in Sources */,
 				D949BAC320C18A6900DA0CC9 /* SpeedManager.swift in Sources */,
 				D98EFC5E20BDD7A200E35161 /* AppDelegate.swift in Sources */,
 				D94084D720BF06BC00497DDE /* CNPPopupController.m in Sources */,

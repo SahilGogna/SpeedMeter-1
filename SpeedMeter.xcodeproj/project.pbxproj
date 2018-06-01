@@ -14,6 +14,7 @@
 		D98EFC6320BDD7A200E35161 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D98EFC6120BDD7A200E35161 /* Main.storyboard */; };
 		D98EFC6520BDD7A200E35161 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D98EFC6420BDD7A200E35161 /* Assets.xcassets */; };
 		D98EFC6820BDD7A200E35161 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D98EFC6620BDD7A200E35161 /* LaunchScreen.storyboard */; };
+		D9F94CBF20C1339C00EC3EDC /* PinJump.json in Resources */ = {isa = PBXBuildFile; fileRef = D9F94CBE20C1339C00EC3EDC /* PinJump.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		D98EFC6420BDD7A200E35161 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D98EFC6720BDD7A200E35161 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D98EFC6920BDD7A200E35161 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9F94CBE20C1339C00EC3EDC /* PinJump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PinJump.json; sourceTree = "<group>"; };
 		DBE8EC9BB80403FAC2CA4ECC /* Pods-SpeedMeter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpeedMeter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SpeedMeter/Pods-SpeedMeter.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,6 +95,7 @@
 		D98EFC5C20BDD7A200E35161 /* SpeedMeter */ = {
 			isa = PBXGroup;
 			children = (
+				D9F94CBD20C1338200EC3EDC /* Resources */,
 				D94084CF20BF049A00497DDE /* Controller */,
 				D98EFC6F20BDD90400E35161 /* View */,
 				D98EFC7020BDD91A00E35161 /* UI */,
@@ -117,6 +120,14 @@
 				D98EFC6620BDD7A200E35161 /* LaunchScreen.storyboard */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		D9F94CBD20C1338200EC3EDC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D9F94CBE20C1339C00EC3EDC /* PinJump.json */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		F8FA1708D982D7FB649E3349 /* Frameworks */ = {
@@ -193,6 +204,7 @@
 				D98EFC6820BDD7A200E35161 /* LaunchScreen.storyboard in Resources */,
 				D98EFC6520BDD7A200E35161 /* Assets.xcassets in Resources */,
 				D98EFC6320BDD7A200E35161 /* Main.storyboard in Resources */,
+				D9F94CBF20C1339C00EC3EDC /* PinJump.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

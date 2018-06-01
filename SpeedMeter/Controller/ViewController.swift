@@ -9,6 +9,7 @@
 import UIKit
 import RevealingSplashView
 import CNPPopupController
+import Lottie
 
 class ViewController: UIViewController {
     
@@ -35,15 +36,23 @@ class ViewController: UIViewController {
                 print("Konum Açık !")
             }
             else {
-                self.showPopupWithStyle(CNPPopupStyle.actionSheet)
+                self.lottieAnimation()
             }
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3), execute: {
+                if CLLocationManager.locationServicesEnabled() {
+                    print("Konum Açık PinJump!")
+                }
+                else {
+                    self.showPopupWithStyle(CNPPopupStyle.actionSheet)
+                }
+            })
         })
     }
     
     override var prefersStatusBarHidden: Bool {
         return !UIApplication.shared.isStatusBarHidden
     }
-    
+
     override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
         return UIStatusBarAnimation.fade
     }
@@ -90,6 +99,26 @@ class ViewController: UIViewController {
         popupController.delegate = self
         self.popupController = popupController
         popupController.present(animated: true)
+    }
+
+    func lottieAnimation() {
+        
+        let animationView = LOTAnimationView(name: "PinJump")
+        animationView.frame = CGRect(x: 0, y: 0, width: 500, height: 500)
+        animationView.center = self.view.center
+        animationView.contentMode = .scaleAspectFill
+        animationView.loopAnimation = true
+        animationView.animationSpeed = 0.8
+        
+        // Applying UIView animation
+        let minimizeTransform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+        animationView.transform = minimizeTransform
+        UIView.animate(withDuration: 3.0, delay: 0.0, options: [.repeat, .autoreverse], animations: {
+            animationView.transform = CGAffineTransform.identity
+        }, completion: nil)
+        
+        view.addSubview(animationView)
+        animationView.play()
     }
 }
 

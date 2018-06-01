@@ -24,10 +24,12 @@
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>🙏</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>location</string>
+	<string>Uygulamanın çalışabilmesi için aşağıdaki seçeneklerden HERZAMAN seçeneğini seçmelisiniz!</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Uygulamanın çalışabilmesi için aşağıdaki seçeneklerden HERZAMAN seçeneğini seçmelisiniz!</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Uygulamanın çalışabilmesi için aşağıdaki seçeneklerden HERZAMAN seçeneğini seçmelisiniz!</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

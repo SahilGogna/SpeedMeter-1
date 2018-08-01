@@ -46,22 +46,33 @@ class ViewController: UIViewController, SpeedNotifierDelegate, SpeedManagerDeleg
         }
         
         // Information : Hızı arkaplanda kontrol ederek gerekli değişiklikler yapılıyor. (BackgroundColor vs...)
-        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { (timer) in
-            if (Int(self.speedLabel.text)! > 20) {
-                print("kırmızı")
-                self.kmHLabel.textColor = UIColor.white
-                self.speedLabel.textColor = UIColor.white
-                self.notificationInfoLabel.textColor = UIColor.white
-                self.view.backgroundColor = UIColor(red:1.00, green:0.23, blue:0.19, alpha:1.0)
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3), execute: {
+            Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { (timer) in
+                if CLLocationManager.locationServicesEnabled() {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(5), execute: {
+                        if (self.speedLabel.text == "- - -") {
+                            // skip;
+                        }
+                        else {
+                            if (Int(self.speedLabel.text)! > 120) {
+                                print("kırmızı")
+                                self.kmHLabel.textColor = UIColor.white
+                                self.speedLabel.textColor = UIColor.white
+                                self.notificationInfoLabel.textColor = UIColor.white
+                                self.view.backgroundColor = UIColor(red:1.00, green:0.23, blue:0.19, alpha:1.0)
+                            }
+                            else {
+                                print("yeşil")
+                                self.kmHLabel.textColor = UIColor.white
+                                self.speedLabel.textColor = UIColor.white
+                                self.notificationInfoLabel.textColor = UIColor.darkText
+                                self.view.backgroundColor = UIColor(red:0.37, green:0.73, blue:0.49, alpha:1.0)
+                            }
+                        }
+                    })
+                }
             }
-            else {
-                print("beyaz")
-                self.kmHLabel.textColor = UIColor.white
-                self.speedLabel.textColor = UIColor.white
-                self.notificationInfoLabel.textColor = UIColor.darkText
-                self.view.backgroundColor = UIColor(red:0.37, green:0.73, blue:0.49, alpha:1.0)
-            }
-        }
+        })
         
         // Information :  Arkaplanda 2 saniye beklettikten sonra kodu çalıştırıyor. Ve diğer uyg. çakışmıyor !!
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
@@ -88,7 +99,6 @@ class ViewController: UIViewController, SpeedNotifierDelegate, SpeedManagerDeleg
         })
     }
     
-    
     @IBAction func toggleNotificationsSwitch(_ sender: UISwitch) {
         SpeedNotifier.sharedNotifier().shouldNotify = sender.isOn
     }
@@ -109,22 +119,7 @@ class ViewController: UIViewController, SpeedNotifierDelegate, SpeedManagerDeleg
         return UIStatusBarAnimation.fade
     }
     
-    // Information : Hız aşımı anında bidirim methodu
-    func playSound() {
-        guard let url = Bundle.main.url(forResource: "notification", withExtension: "mp3") else { return }
-        
-        do {
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
-            try AVAudioSession.sharedInstance().setActive(true)
-            
-            let player = try AVAudioPlayer(contentsOf: url)
-            
-            player.play()
-            
-        } catch let error {
-            print(error.localizedDescription)
-        }
-    }
+    // TODO : Hız aşımı anında bidirim methodu
     
     func buttonPressed(){
         

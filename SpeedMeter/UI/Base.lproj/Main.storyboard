@@ -31,30 +31,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- - -" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X5J-A0-R1S" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
-                                <rect key="frame" x="82" y="293" width="250" height="150"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="7NW-Bn-Jsc"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="lx0-gs-FtV"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="140"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="km/h" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dum-Hy-LqZ">
-                                <rect key="frame" x="182" y="467" width="50" height="25"/>
+                                <rect key="frame" x="182" y="453" width="50" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="HKI-QY-sln"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="M6h-l8-iMC"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bildirimleri etkinleştir" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="htF-By-dgs">
                                 <rect key="frame" x="20" y="685.66666666666652" width="317" height="30.333333333333371"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBoldItalic" family="Avenir Next" pointSize="17"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q0L-xy-ARz">
@@ -63,19 +53,29 @@
                                     <action selector="toggleNotificationsSwitch:" destination="BYZ-38-t0r" eventType="valueChanged" id="AZk-mk-6Kc"/>
                                 </connections>
                             </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- - -" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X5J-A0-R1S" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
+                                <rect key="frame" x="82" y="271" width="250" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="7NW-Bn-Jsc"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="lx0-gs-FtV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="140"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.36850512027740479" green="0.72925359010696411" blue="0.49070245027542114" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Q0L-xy-ARz" firstAttribute="leading" secondItem="htF-By-dgs" secondAttribute="trailing" constant="8" id="6Jz-fd-kMV"/>
                             <constraint firstAttribute="bottom" secondItem="Q0L-xy-ARz" secondAttribute="bottom" constant="20" id="6xS-HP-AVl"/>
                             <constraint firstAttribute="bottom" secondItem="htF-By-dgs" secondAttribute="bottom" constant="20" id="Cbf-Vy-8yO"/>
-                            <constraint firstItem="Dum-Hy-LqZ" firstAttribute="top" secondItem="X5J-A0-R1S" secondAttribute="bottom" constant="24" id="GiF-xj-KWv"/>
+                            <constraint firstItem="Dum-Hy-LqZ" firstAttribute="top" secondItem="X5J-A0-R1S" secondAttribute="bottom" constant="32" id="GiF-xj-KWv"/>
                             <constraint firstItem="Q0L-xy-ARz" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="TnS-M7-Bmz"/>
                             <constraint firstItem="htF-By-dgs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="g9S-Kg-QWz"/>
                             <constraint firstItem="X5J-A0-R1S" firstAttribute="centerX" secondItem="Dum-Hy-LqZ" secondAttribute="centerX" id="jwJ-ow-LKQ"/>
                             <constraint firstItem="X5J-A0-R1S" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="t1U-5C-99I"/>
                             <constraint firstItem="htF-By-dgs" firstAttribute="centerY" secondItem="Q0L-xy-ARz" secondAttribute="centerY" id="xSA-n6-Y8V"/>
-                            <constraint firstItem="X5J-A0-R1S" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="yf9-93-xRF"/>
+                            <constraint firstItem="X5J-A0-R1S" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-22" id="yf9-93-xRF"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="lB3-xg-Idd"/>
@@ -88,7 +88,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-688" y="181"/>
+            <point key="canvasLocation" x="-1178" y="172"/>
         </scene>
     </scenes>
 </document>

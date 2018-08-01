@@ -11,6 +11,7 @@ import Lottie
 import LTMorphingLabel
 import CNPPopupController
 import RevealingSplashView
+import AVFoundation
 
 class ViewController: UIViewController, SpeedNotifierDelegate, SpeedManagerDelegate {
     
@@ -19,9 +20,11 @@ class ViewController: UIViewController, SpeedNotifierDelegate, SpeedManagerDeleg
     @IBOutlet weak var notificationInfoLabel: UILabel!
     @IBOutlet weak var notificationSwitch: UISwitch!
     
+    var player: AVAudioPlayer?
+
     var popupController:CNPPopupController?
-    let splashView = RevealingSplashView(iconImage: UIImage (named: "Icon-3x")!, iconInitialSize: CGSize (width: 70, height: 70), backgroundColor: UIColor.white)
     
+    let splashView = RevealingSplashView(iconImage: UIImage (named: "Icon-3x")!, iconInitialSize: CGSize (width: 70, height: 70), backgroundColor: UIColor.white)
     let speedManager = SpeedManager()
 
     override func viewDidLoad() {
@@ -42,7 +45,25 @@ class ViewController: UIViewController, SpeedNotifierDelegate, SpeedManagerDeleg
             self.splashView.finishHeartBeatAnimation()
         }
         
-        // Arkaplanda 2 saniye beklettikten sonra kodu çalıştırıyor. Ve diğer uyg. çakışmıyor !!
+        // Information : Hızı arkaplanda kontrol ederek gerekli değişiklikler yapılıyor. (BackgroundColor vs...)
+        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { (timer) in
+            if (Int(self.speedLabel.text)! > 20) {
+                print("kırmızı")
+                self.kmHLabel.textColor = UIColor.white
+                self.speedLabel.textColor = UIColor.white
+                self.notificationInfoLabel.textColor = UIColor.white
+                self.view.backgroundColor = UIColor(red:1.00, green:0.23, blue:0.19, alpha:1.0)
+            }
+            else {
+                print("beyaz")
+                self.kmHLabel.textColor = UIColor.white
+                self.speedLabel.textColor = UIColor.white
+                self.notificationInfoLabel.textColor = UIColor.darkText
+                self.view.backgroundColor = UIColor(red:0.37, green:0.73, blue:0.49, alpha:1.0)
+            }
+        }
+        
+        // Information :  Arkaplanda 2 saniye beklettikten sonra kodu çalıştırıyor. Ve diğer uyg. çakışmıyor !!
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
             if CLLocationManager.locationServicesEnabled() {
                 print("Konum Açık !")
@@ -86,6 +107,23 @@ class ViewController: UIViewController, SpeedNotifierDelegate, SpeedManagerDeleg
 
     override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
         return UIStatusBarAnimation.fade
+    }
+    
+    // Information : Hız aşımı anında bidirim methodu
+    func playSound() {
+        guard let url = Bundle.main.url(forResource: "notification", withExtension: "mp3") else { return }
+        
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+            try AVAudioSession.sharedInstance().setActive(true)
+            
+            let player = try AVAudioPlayer(contentsOf: url)
+            
+            player.play()
+            
+        } catch let error {
+            print(error.localizedDescription)
+        }
     }
     
     func buttonPressed(){

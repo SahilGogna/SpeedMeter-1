@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -24,6 +23,10 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SpeedMeter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tvJ-bh-8Ll"/>
+                        <viewControllerLayoutGuide type="bottom" id="9tQ-oa-PZT"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -49,7 +52,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bildirimleri etkinleştir" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="htF-By-dgs">
-                                <rect key="frame" x="20" y="685.66666666666663" width="317" height="30.333333333333371"/>
+                                <rect key="frame" x="20" y="685.66666666666652" width="317" height="30.333333333333371"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBoldItalic" family="Avenir Next" pointSize="17"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -64,8 +67,8 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Q0L-xy-ARz" firstAttribute="leading" secondItem="htF-By-dgs" secondAttribute="trailing" constant="8" id="6Jz-fd-kMV"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Q0L-xy-ARz" secondAttribute="bottom" constant="20" id="6xS-HP-AVl"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="htF-By-dgs" secondAttribute="bottom" constant="20" id="Cbf-Vy-8yO"/>
+                            <constraint firstAttribute="bottom" secondItem="Q0L-xy-ARz" secondAttribute="bottom" constant="20" id="6xS-HP-AVl"/>
+                            <constraint firstAttribute="bottom" secondItem="htF-By-dgs" secondAttribute="bottom" constant="20" id="Cbf-Vy-8yO"/>
                             <constraint firstItem="Dum-Hy-LqZ" firstAttribute="top" secondItem="X5J-A0-R1S" secondAttribute="bottom" constant="24" id="GiF-xj-KWv"/>
                             <constraint firstItem="Q0L-xy-ARz" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="TnS-M7-Bmz"/>
                             <constraint firstItem="htF-By-dgs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="g9S-Kg-QWz"/>
@@ -74,7 +77,6 @@
                             <constraint firstItem="htF-By-dgs" firstAttribute="centerY" secondItem="Q0L-xy-ARz" secondAttribute="centerY" id="xSA-n6-Y8V"/>
                             <constraint firstItem="X5J-A0-R1S" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="yf9-93-xRF"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="lB3-xg-Idd"/>
                     <connections>

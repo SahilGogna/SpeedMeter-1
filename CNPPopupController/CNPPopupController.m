@@ -467,7 +467,7 @@ CGFloat CNP_UIInterfaceOrientationAngleOfOrientation(UIInterfaceOrientation orie
 
 + (CNPPopupTheme *)defaultTheme {
     CNPPopupTheme *defaultTheme = [[CNPPopupTheme alloc] init];
-    defaultTheme.backgroundColor = [UIColor whiteColor];
+    defaultTheme.backgroundColor = [UIColor colorWithRed:0.37 green:0.73 blue:0.49 alpha:1.0];
     defaultTheme.cornerRadius = 4.0f;
     defaultTheme.popupContentInsets = UIEdgeInsetsMake(16.0f, 16.0f, 16.0f, 16.0f);
     defaultTheme.popupStyle = CNPPopupStyleCentered;

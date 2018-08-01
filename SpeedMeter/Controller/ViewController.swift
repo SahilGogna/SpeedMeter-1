@@ -169,6 +169,7 @@ class ViewController: UIViewController, SpeedNotifierDelegate, SpeedManagerDeleg
         button.backgroundColor = UIColor.init(colorLiteralRed: 0.46, green: 0.8, blue: 1.0, alpha: 1.0)
         
         button.layer.cornerRadius = 4;
+        button.backgroundColor = UIColor(red:1.00, green:0.23, blue:0.19, alpha:1.0)
         button.selectionHandler = { (button) -> Void in
             self.popupController?.dismiss(animated: true)
             print("Block for button: \(String(describing: button.titleLabel?.text))")
@@ -177,10 +178,12 @@ class ViewController: UIViewController, SpeedNotifierDelegate, SpeedManagerDeleg
         let titleLabel = UILabel()
         titleLabel.numberOfLines = 0;
         titleLabel.attributedText = title
+        titleLabel.textColor = UIColor.white
         
         let lineOneLabel = UILabel()
         lineOneLabel.numberOfLines = 0;
         lineOneLabel.attributedText = lineOne;
+        lineOneLabel.textColor = UIColor.white
         
         let imageView = UIImageView.init(image: UIImage.init(named: "icon"))
         

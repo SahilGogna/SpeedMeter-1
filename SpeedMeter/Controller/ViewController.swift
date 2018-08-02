@@ -20,13 +20,12 @@ class ViewController: UIViewController, SpeedNotifierDelegate, SpeedManagerDeleg
     @IBOutlet weak var notificationInfoLabel: UILabel!
     @IBOutlet weak var notificationSwitch: UISwitch!
     
-    var player: AVAudioPlayer?
-
+    var speedAudio: AVAudioPlayer!
     var popupController:CNPPopupController?
     
     let splashView = RevealingSplashView(iconImage: UIImage (named: "Icon-3x")!, iconInitialSize: CGSize (width: 70, height: 70), backgroundColor: UIColor.white)
     let speedManager = SpeedManager()
-
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -41,11 +40,37 @@ class ViewController: UIViewController, SpeedNotifierDelegate, SpeedManagerDeleg
         splashView.animationType = .heartBeat
         splashView.startAnimation()
         
+        // Information : Splash ekranının 2 saniye sonra durdurulması hakkında
         Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { (timer) in
             self.splashView.finishHeartBeatAnimation()
         }
         
-        // Information : Hızı arkaplanda kontrol ederek gerekli değişiklikler yapılıyor. (BackgroundColor vs...)
+        GPSControl()
+        SpeedControl()
+    }
+    
+    @IBAction func toggleNotificationsSwitch(_ sender: UISwitch) {
+        SpeedNotifier.sharedNotifier().shouldNotify = sender.isOn
+    }
+    
+    func speedDidChange(_ speed: Speed) {
+        speedLabel.text = String(Int(speed))
+    }
+    
+    func notificationsStatusDidChange(_ shouldNotify: Bool) {
+        notificationSwitch?.isOn = shouldNotify
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return !UIApplication.shared.isStatusBarHidden
+    }
+
+    override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
+        return UIStatusBarAnimation.fade
+    }
+    
+    // Information : Hızı arkaplanda kontrol ederek gerekli değişiklikler yapılıyor. (BackgroundColor vs...)
+    func SpeedControl() {
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3), execute: {
             Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { (timer) in
                 if CLLocationManager.locationServicesEnabled() {
@@ -55,6 +80,7 @@ class ViewController: UIViewController, SpeedNotifierDelegate, SpeedManagerDeleg
                         }
                         else {
                             if (Int(self.speedLabel.text)! > 120) {
+                                // TODO : speedNotif(), hız 120'nin üzerindeyse Timerdan ötürü döngüye giriyor durmaksızın metod çalıştırılıyor.
                                 print("kırmızı")
                                 self.kmHLabel.textColor = UIColor.white
                                 self.speedLabel.textColor = UIColor.white
@@ -65,7 +91,7 @@ class ViewController: UIViewController, SpeedNotifierDelegate, SpeedManagerDeleg
                                 print("yeşil")
                                 self.kmHLabel.textColor = UIColor.white
                                 self.speedLabel.textColor = UIColor.white
-                                self.notificationInfoLabel.textColor = UIColor.darkText
+                                self.notificationInfoLabel.textColor = UIColor.white
                                 self.view.backgroundColor = UIColor(red:0.37, green:0.73, blue:0.49, alpha:1.0)
                             }
                         }
@@ -73,8 +99,10 @@ class ViewController: UIViewController, SpeedNotifierDelegate, SpeedManagerDeleg
                 }
             }
         })
-        
-        // Information :  Arkaplanda 2 saniye beklettikten sonra kodu çalıştırıyor. Ve diğer uyg. çakışmıyor !!
+    }
+    
+    // Information :  Arkaplanda 2 saniye beklettikten sonra kodu çalıştırıyor. Ve diğer uyg. çakışmıyor !!
+    func GPSControl() {
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
             if CLLocationManager.locationServicesEnabled() {
                 print("Konum Açık !")
@@ -98,53 +126,41 @@ class ViewController: UIViewController, SpeedNotifierDelegate, SpeedManagerDeleg
             })
         })
     }
-    
-    @IBAction func toggleNotificationsSwitch(_ sender: UISwitch) {
-        SpeedNotifier.sharedNotifier().shouldNotify = sender.isOn
-    }
-    
-    func speedDidChange(_ speed: Speed) {
-        speedLabel.text = String(Int(speed))
-    }
-    
-    func notificationsStatusDidChange(_ shouldNotify: Bool) {
-        notificationSwitch?.isOn = shouldNotify
-    }
-    
-    override var prefersStatusBarHidden: Bool {
-        return !UIApplication.shared.isStatusBarHidden
-    }
 
-    override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
-        return UIStatusBarAnimation.fade
+    
+    // Information : Hız aşım bildirim sesi hakkında
+    func speedNotif() {
+        let path = Bundle.main.path(forResource: "notification", ofType: "mp3")
+        let url = URL(fileURLWithPath: path!)
+        
+        do {
+            let speedNotif = try AVAudioPlayer(contentsOf: url)
+            speedAudio = speedNotif
+            speedNotif.play()
+        } catch let error {
+            print(error.localizedDescription)
+        }
     }
     
-    // TODO : Hız aşımı anında bidirim methodu
-    
+    // Information : POPUP içindeki butona tıklandığında Ayarlar -> Konum sekmesi açılması hakkında
     func buttonPressed(){
-        
         if CLLocationManager.locationServicesEnabled() {
-            //
+            // skip;
         }
         else {
-            
             let alertControllerOpenLocation = UIAlertController(title: "Dikkat", message: "Konumu Açmalısın!", preferredStyle: .alert)
             
             if CLLocationManager.locationServicesEnabled() {
-                
                 self.dismiss(animated: true, completion: nil)
                 //DispatchQueue
             }
             else {
-                
                 let okActionLocation = UIAlertAction(title: "TAMAM", style: .default) { (okLocation) in
-                    
                     let locUrl = "App-Prefs:root=Privacy&path=LOCATION_SERVICES"
                     if let url = URL (string: "\(locUrl)") {
                         UIApplication.shared.open(url, options: [:], completionHandler: nil)
                     }
                 }
-                
                 alertControllerOpenLocation.addAction(okActionLocation)
                 self.present(alertControllerOpenLocation, animated: true, completion: nil)
             }
@@ -152,11 +168,9 @@ class ViewController: UIViewController, SpeedNotifierDelegate, SpeedManagerDeleg
     }
     
     func showPopupWithStyle(_ popupStyle: CNPPopupStyle) {
-        
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineBreakMode = NSLineBreakMode.byWordWrapping
         paragraphStyle.alignment = NSTextAlignment.center
-        
         let title = NSAttributedString(string: "Konuma ihtiyacım var 🙏", attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 24), NSParagraphStyleAttributeName: paragraphStyle])
         let lineOne = NSAttributedString(string: "You can add text and images", attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 18), NSParagraphStyleAttributeName: paragraphStyle])
         
@@ -165,11 +179,10 @@ class ViewController: UIViewController, SpeedNotifierDelegate, SpeedManagerDeleg
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         button.addTarget(self, action: #selector(ViewController.buttonPressed), for: .touchUpInside)
         button.setTitle("Konumu AÇ", for: UIControlState())
-        
         button.backgroundColor = UIColor.init(colorLiteralRed: 0.46, green: 0.8, blue: 1.0, alpha: 1.0)
-        
         button.layer.cornerRadius = 4;
         button.backgroundColor = UIColor(red:1.00, green:0.23, blue:0.19, alpha:1.0)
+        
         button.selectionHandler = { (button) -> Void in
             self.popupController?.dismiss(animated: true)
             print("Block for button: \(String(describing: button.titleLabel?.text))")
@@ -200,7 +213,6 @@ class ViewController: UIViewController, SpeedNotifierDelegate, SpeedManagerDeleg
     }
 
     func lottieAnimation() {
-        
         let animationView = LOTAnimationView(name: "PinJump")
         animationView.frame = CGRect(x: 0, y: 0, width: 500, height: 500)
         animationView.center = self.view.center

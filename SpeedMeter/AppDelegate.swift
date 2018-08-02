@@ -30,6 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillEnterForeground(_ application: UIApplication) {
         print("ARKAPLAN KONTROL")
         
+        // Information :  Arkaplanda 2 saniye beklettikten sonra kodu çalıştırıyor. Ve diğer uyg. çakışmıyor !!
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
             if CLLocationManager.locationServicesEnabled() {
                 print("Konum Açık !")

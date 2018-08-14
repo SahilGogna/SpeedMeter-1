@@ -7,4 +7,4 @@
 ![](https://img.shields.io/badge/license-Apache%202.0-yellow.svg)
 
 ### Uygulama içinden görütüler
-![ScreenShot](https://raw.github.com/mustafagunes/SpeedMeter/master/README%20Docs/iosSpeedmeter.gif)
+![ScreenShot](https://raw.github.com/mustafagunes/SpeedMeter/master/README%20Docs/speedmeter.gif)

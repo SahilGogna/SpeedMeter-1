@@ -81,14 +81,14 @@ class ViewController: UIViewController, SpeedNotifierDelegate, SpeedManagerDeleg
                         else {
                             if (Int(self.speedLabel.text)! > 120) {
                                 // TODO : speedNotif(), hız 120'nin üzerindeyse Timerdan ötürü döngüye giriyor durmaksızın metod çalıştırılıyor.
-                                print("kırmızı")
+                                print("red")
                                 self.kmHLabel.textColor = UIColor.white
                                 self.speedLabel.textColor = UIColor.white
                                 self.notificationInfoLabel.textColor = UIColor.white
                                 self.view.backgroundColor = UIColor(red:1.00, green:0.23, blue:0.19, alpha:1.0)
                             }
                             else {
-                                print("yeşil")
+                                print("green")
                                 self.kmHLabel.textColor = UIColor.white
                                 self.speedLabel.textColor = UIColor.white
                                 self.notificationInfoLabel.textColor = UIColor.white
@@ -148,14 +148,14 @@ class ViewController: UIViewController, SpeedNotifierDelegate, SpeedManagerDeleg
             // skip;
         }
         else {
-            let alertControllerOpenLocation = UIAlertController(title: "Dikkat", message: "Konumu Açmalısın!", preferredStyle: .alert)
+            let alertControllerOpenLocation = UIAlertController(title: "Warning", message: "Open your location!", preferredStyle: .alert)
             
             if CLLocationManager.locationServicesEnabled() {
                 self.dismiss(animated: true, completion: nil)
                 //DispatchQueue
             }
             else {
-                let okActionLocation = UIAlertAction(title: "TAMAM", style: .default) { (okLocation) in
+                let okActionLocation = UIAlertAction(title: "OK", style: .default) { (okLocation) in
                     let locUrl = "App-Prefs:root=Privacy&path=LOCATION_SERVICES"
                     if let url = URL (string: "\(locUrl)") {
                         UIApplication.shared.open(url, options: [:], completionHandler: nil)
@@ -171,14 +171,14 @@ class ViewController: UIViewController, SpeedNotifierDelegate, SpeedManagerDeleg
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineBreakMode = NSLineBreakMode.byWordWrapping
         paragraphStyle.alignment = NSTextAlignment.center
-        let title = NSAttributedString(string: "Konuma ihtiyacım var 🙏", attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 24), NSParagraphStyleAttributeName: paragraphStyle])
-        let lineOne = NSAttributedString(string: "You can add text and images", attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 18), NSParagraphStyleAttributeName: paragraphStyle])
+        let title = NSAttributedString(string: "I need your location 🙏", attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 24), NSParagraphStyleAttributeName: paragraphStyle])
+        let lineOne = NSAttributedString(string: "", attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 18), NSParagraphStyleAttributeName: paragraphStyle])
         
         let button = CNPPopupButton.init(frame: CGRect(x: 0, y: 0, width: 200, height: 60))
         button.setTitleColor(UIColor.white, for: UIControlState())
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         button.addTarget(self, action: #selector(ViewController.buttonPressed), for: .touchUpInside)
-        button.setTitle("Konumu AÇ", for: UIControlState())
+        button.setTitle("Open Your Location", for: UIControlState())
         button.backgroundColor = UIColor.init(colorLiteralRed: 0.46, green: 0.8, blue: 1.0, alpha: 1.0)
         button.layer.cornerRadius = 4;
         button.backgroundColor = UIColor(red:1.00, green:0.23, blue:0.19, alpha:1.0)
@@ -241,11 +241,11 @@ class ViewController: UIViewController, SpeedNotifierDelegate, SpeedManagerDeleg
                 self.notificationSwitch.isHidden = false
                 self.notificationInfoLabel.isHidden = false
                 
-                let alertController = UIAlertController(title: "Dikkat", message: "Özelliklerin verimli çalışması için uygulamayı yeniden başlatmalısın!", preferredStyle: .alert)
-                let okAction = UIAlertAction(title: "TAMAM", style: .default) { (ok) in
+                let alertController = UIAlertController(title: "Warning", message: "You must restart the application for features to work efficiently!", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "OK", style: .default) { (ok) in
                     exit(0)
                 }
-                let cancelAction = UIAlertAction(title: "Vazgeç", style: .cancel) { (cancel) in
+                let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (cancel) in
                     print("Cancel")
                 }
                 alertController.addAction(okAction)

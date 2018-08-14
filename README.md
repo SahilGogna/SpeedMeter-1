@@ -13,13 +13,13 @@
 ------
 Aşağıda uygulamada için kullanılan araçlar ve kütüphanelerin listesi yer alıyor.
 
-1. POD - Üçüncü parti kütüphaneleri yüklediğim araç
+1. **POD** - Üçüncü parti kütüphaneleri yüklediğim araç
     - [lottie-ios](https://github.com/airbnb/lottie-ios) - JSON uzantılı dosyalar ile çok düşük boyutlarda alan kaplayarak mükemmel animasyonlar sağlıyor.
     - [LTMorphingLabel](https://github.com/lexrus/LTMorphingLabel) - Bir çok farklı animasyon ile geçişler sunan kütüphane.
     - [CNPPopupController](https://github.com/carsonperrotti/CNPPopupController) - Bildirimler için yazılmış basit popup kütüphanesi.
     - [RevealingSplashView](https://github.com/PiXeL16/RevealingSplashView) - Uygulama başlangıcında LaunchScreen'i kullanarak efektli uygulama başlangıcı sağlıyor.
     
-2. GIT - Versiyon Kontrol
+2. **GIT - Versiyon Kontrol**
     - ```git add -A``` - Bulunduğunuz dosyadaki bütün parçaları alır.
     - ```git commit -m "<description>"``` - Yaptığınız değişikliklerden sonra versiyonla alakalı açıklama kısmı.
     - ```git push -u origin master``` - Yukarıdakileri sırası ile yaptıysanız, bu komutla Github, Gitlab ve BitBucket gibi depolara projenizi gönderebilirsiniz
@@ -29,12 +29,12 @@ Aşağıda uygulamada için kullanılan araçlar ve kütüphanelerin listesi yer
 Projeyi İndirme & Kurma
 -----------------------
 
-* Elle Kurulum
+* **Elle Kurulum**
     - [Bu linke tıkyarak projeyi .zip olarak indirin](https://github.com/mustafagunes/SpeedMeter/archive/master.zip)
     - İndirme işlemi bittikten sonra, dosyaları çıkartın.
-    - Ardından ExportContact(VCard).xcworkspace çift tıklayarak projeyi çalıştırın.
+    - Ardından **SpeedMeter.xcworkspace** çift tıklayarak projeyi çalıştırın.
 
-* Terminal ile Kurulum
+* **Terminal ile Kurulum**
     - Aşağıdaki komutları sırasıyla terminale yazın ve çalıştırın:
         * ```git clone https://github.com/mustafagunes/SpeedMeter.git```
         * ```cd SpeedMeter```
